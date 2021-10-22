@@ -13,14 +13,13 @@ public class LSdriver{
 
     //invite to freshman orientation?
     boolean invite;
-    invite = sam.inviteFroshOrientation();
+    invite = sam.inviteCollegePrep();
     System.out.println("Invite sam? " + invite);
 
     //Can student graduate
-    sam.canTheyGraduate();
-    sam.canTheyGraduate();
-    shadia.canTheyGraduate();
-    jamila.canTheyGraduate();
-    sophia.canTheyGraduate();
+    System.out.println(sam.canTheyGraduate());
+    System.out.println(shadia.canTheyGraduate());
+    System.out.println(jamila.canTheyGraduate());
+    System.out.println(sophia.canTheyGraduate());
   }
 }

@@ -28,21 +28,22 @@ public class LehmanStudent {
       credits += newCredits;
     }
 
-    public boolean canTheyGraduate(){
+    public String canTheyGraduate(){
       boolean creditCheck = (credits >= 44);
+      String output;
       if (grade == 12 && creditCheck){
-        System.out.println(firstName + " will graduate this year! Congrats!");
-        return true;
+        output = firstName + " will graduate this year! Congrats!";
+
       } else if (grade == 12 && !(creditCheck)) {
-        System.out.println(firstName + " is behind schedule! They need to earn " + (44 - credits) + " credits to graduate this year.");
-        return false;
+        output = firstName + " is behind schedule! They need to earn " + (44 - credits) + " credits to graduate this year.";
+
       } else if (grade < 12 && creditCheck){
-        System.out.println(firstName + " needs to wait until "+ gradYear + " to graduate.");
-        return false;
+        output = firstName + " needs to wait until "+ gradYear + " to graduate.";
       } else {
-        System.out.println(firstName + " needs to earn " + (44-credits) +" credits and wait until "+ gradYear +  " to graduate.");
-        return false;
+        output =  firstName + " needs to earn " + (44-credits) +" credits and wait until "+ gradYear +  " to graduate.";
+
       }
+      return output;
     }
    //grad year methods
    public int getGradYear(){
