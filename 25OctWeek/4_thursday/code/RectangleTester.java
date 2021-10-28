@@ -16,6 +16,7 @@ public class RectangleTester
          Rectangle r3 = r2;
          System.out.print(r2 == r3);
 
+
          /*
          String str1 = "I love java.";
          String str2 = new String("I love java.");
