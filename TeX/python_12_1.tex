@@ -1,0 +1,369 @@
+
+%AIM AND CLASS!!!!
+\newcommand{\aim}{MP1 recap/MP2 preview} 
+\newcommand{\class}{Python }
+\newcommand{\num}{ 2.2}
+\newcommand{\reminders}{
+
+\begin{enumerate}
+	\item Weekly CodeHS expectations  up on Google Classroom
+	\item  Only two marking periods this semester! 2nd marking period ends \textbf{late January}.
+	\item \textbf{Daily Office Hours:} 2:36-3:06 (via Google Meet; see Google Classroom!)
+	\item Assessment \#2 up on CodeHS!
+\end{enumerate}
+}
+%for Python code
+
+
+%\documentclass[t,handout,usenames,dvipsnames]{beamer}
+\documentclass[t,aspectratio=169,usenames,dvipsnames]{beamer}
+
+\usepackage{listings}
+
+\usepackage{pgfpages}
+\mode<handout>{%
+	\pgfpagesuselayout{4 on 1}[a4paper] 
+	\setbeameroption{show notes}
+}
+
+
+\usepackage{tcolorbox} %for colored boxes
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{listings} %To insert code into presentation.
+\lstset{escapeinside={<@}{@>}}
+
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize,        % size of fonts used for the code
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve},     % string literal style
+}
+
+
+
+
+\newcommand{\vb}{\vspace{1cm}}
+\newcommand{\vs}{\vspace{0.5cm}}
+
+\setbeamertemplate{definitions}[numbered] %numbered definitions
+
+\usepackage[english]{babel}
+
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+
+%HEADER GOES HERE
+\setbeamertemplate{headline}{
+	\hfill\includegraphics[width=1.5cm]{/home/chris/Dropbox/GEO/images/lehmanlogo.jpg}\hspace{0.2cm}\vspace{-1cm}}
+
+
+
+%FOOTER GOES HERE
+\setbeamerfont{footline}{size=\fontsize{13}{15}\selectfont}
+\setbeamertemplate{footline}[text line]{%
+  \parbox{\linewidth}{\vspace*{-8pt}\alert{Aim:} \aim \\ \alert{Date:} \today \hfill\insertshortauthor}}
+\setbeamertemplate{navigation symbols}{}
+
+\title[O'Brien Lesson plan notes] % (optional, use only with long paper titles)
+{\class lesson \num}
+
+
+\subtitle
+{ }
+
+
+\author[] % (optional, use only with lots of authors)
+{Dr. O'Brien \\ Fall 2020}
+
+\institute[Herbert H. Lehman High School] % (optional, but mostly needed)
+{
+  %\inst{1}%
+  Herbert H. Lehman High School \\ Mr. Powers, Principal}
+
+\date{ }
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  
+  \begin{center}
+\includegraphics[width=2cm]{/home/chris/Dropbox/GEO/images/lehmanlogo.jpg}
+\end{center}
+\note{Preplanned questions are indicated by a (+). The anticipated response immediately follows, on the same line or the next line.
+Directions indicated by a (@). }
+\end{frame}
+
+
+
+% DO NOW  DO NOW DO NOW
+\begin{frame}
+\frametitle<presentation>{ Do Now}
+Answer in \textbf{Google Form} on Google Classroom
+\begin{tcolorbox}[colback=blue!5,colframe=red!40!black ]
+What do you think is  the most important thing you learned in Python during MP1? Explain why in a full paragraph.
+\end{tcolorbox}
+%NOTES NOTES NOTES
+\note{...}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle<presentation>{Announcements}
+\vspace{-1cm}
+\hspace{4cm}
+\includegraphics[width=5cm]{/home/chris/Dropbox/GEO/images/sovcon.jpg}
+\reminders
+
+\note{...}
+\end{frame}
+
+\begin{frame}
+\frametitle<presentation>{Weekly CodeHS Expectations}
+\includegraphics[width=12cm]{expectations.png}
+\note{...}
+\end{frame}
+
+
+\begin{frame}
+\frametitle<presentation>{MP1 Recap}
+Main themes last marking period:
+
+\begin{itemize}
+	\item<1-> Basic syntax for commands (e.g. \texttt{forward(50)})
+	\item Using comments to describe your code
+	\item Syntax for \textbf{for loops} and \textbf{functions}
+	\item Using \textbf{for loops} and \textbf{functions} to express patterns in our code
+\end{itemize}
+\note{...}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle<presentation>{Expressing patterns in Python (1)}
+\begin{enumerate}
+	\item What pattern do you notice in \alert{example A}?
+	\item How does \textcolor{blue}{example B} \textit{express} this pattern better?
+
+\end{enumerate}
+	
+
+\begin{minipage}[t]{0.45\textwidth}
+	\textcolor{red}{Example A}
+	\begin{lstlisting}[language=Python]
+	forward(50)
+	left(90)
+	forward(50)
+	left(90)
+	forward(50)
+	left(90)
+	forward(50)
+	left(90)
+	\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+	\textcolor{blue}{Example B}
+	\begin{lstlisting}[language=Python]
+	for i in range(4):
+	  forward(50)
+	  left(90)
+	\end{lstlisting}
+\end{minipage}
+
+\note{}
+\end{frame}
+
+\begin{frame}[plain, fragile]
+\frametitle<presentation>{Expressing patterns in Python (2)}
+
+\begin{enumerate}
+	\item What pattern do you notice in \alert{example A}?
+	\item How does \textcolor{blue}{example B} \textit{express} this pattern better?
+	
+\end{enumerate}
+
+
+
+
+\begin{columns}[T]
+\column{0.45\textwidth}
+%\textcolor{red}{Example A}
+\begin{tcolorbox}[colback=white!5,colframe=red!40!black,title=Example A ]
+\begin{lstlisting}[language=Python]
+for i in range(2):
+  for i in range(4):
+    forward(50)
+    left(90)
+  penup()
+  forward(50)
+  pendown()
+  for i in range(4):
+    forward(50)
+    left(90)
+	
+\end{lstlisting}
+\end{tcolorbox}
+\column{0.5\textwidth}
+
+
+\begin{tcolorbox}[colback=white!5,colframe=blue!40!black,title=Example B ]
+	\begin{lstlisting}[language=Python]
+	def square():
+	  for i in range(4):
+	    forward(50)
+	    left(90)
+	for i in range(2):
+	  square()
+	  penup()
+	  forward(50)
+	  pendown()
+	  square()
+	
+	
+	\end{lstlisting}
+\end{tcolorbox}
+\end{columns}
+
+
+\note{...}
+\end{frame}
+
+\begin{frame}
+\frametitle<presentation>{MP2 preview}
+\begin{itemize}
+	\item<1-> Top-down design and computational thinking
+	\item<2-> Variables
+	\item<3-> Function parameters
+	\item<4-> Control structures: if(/else) statements, while loops
+\end{itemize}
+\note{...}
+\end{frame}
+
+
+ \begin{frame}
+\frametitle<presentation>{ Logging into Zoom }
+Use this link: https://us02web.zoom.us/j/82881041991?pwd=M0JuSmFWc0VuUi9NbVRCTHlveG1YUT09
+
+Sign in with \textbf{Lehman email credentials}
+
+
+
+\begin{tcolorbox}[colback=blue!5,colframe=red!40!black,title=Reminders ]
+\reminders
+\end{tcolorbox}
+
+\note{...}
+\end{frame}
+
+
+
+
+\end{document}
+
+
+\includegraphics[width=9cm]{exitticket.png}
+
+
+
+\begin{columns}[T]
+\column{0.5\textwidth}
+\end{columns}
+
+
+
+\begin{frame}
+\frametitle<presentation>{Title here}
+\note{...}
+\end{frame}
+
+
+
+ \begin{minipage}[t]{0.45\textwidth}
+ \textcolor{red}{Example A}
+ \begin{lstlisting}[language=Javascript]
+ function <@\texttt{\textcolor{blue}{start}}@>() {
+
+ }
+ \end{lstlisting}
+ \end{minipage}
+
+
+
+
+\begin{frame}
+\frametitle<presentation>{Split Do Now: Where do I go?}
+
+\fbox{
+\begin{minipage}[t]{0.45\textwidth}
+\textcolor{BrickRed}{Group A}: \textbf{Go to the Do now Area. Open binder. Begin Do Now.}\\
+
+Everyone else.
+
+\end{minipage}
+}
+\fbox{
+\begin{minipage}[t]{0.45\textwidth}
+\textcolor{Blue}{Group B}: \textbf{Go to your workstation. Login to CodeHS. Work at a  \\ volume 0.}\\
+
+
+
+
+\end{minipage}
+}
+\note{Period 2. Post on front smartboard. direct students to find their name as they come in.}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle<presentation>{Do Now:  glossary, etc.}
+\begin{enumerate}
+\item<1-> Log on to Google Classroom.
+\item<2-> You'll find your \alert{Unit 1 glossary} in the \textbf{Classwork} tab.
+\item<3-> Make sure you have entries for all these vocab. items!
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!40!black,title=Vocabulary]
+\begin{itemize}
+\item
+\alert{ }:
+
+\item
+\alert{ }:
+
+
+\end{itemize}
+\end{tcolorbox}
+\item<4-> When your glossary is updated, log into CodeHS. Work on Karel/Javascript lessons.
+\end{enumerate}
+
+
+
+
