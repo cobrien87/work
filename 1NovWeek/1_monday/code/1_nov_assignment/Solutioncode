@@ -1,0 +1,11 @@
+CSTeacher one_teacher = one.get_teacher();
+CSTeacher two_teacher = two.get_teacher();
+
+if (one.equals(two)) {
+  System.out.print("Same Student");
+}
+if (one_teacher.equals(two_teacher)){
+  System.out.println(" Same teacher.");
+} else{
+  System.out.println(" Different teacher.");
+}
