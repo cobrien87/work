@@ -21,7 +21,7 @@ public class Student{
   public void same_teacher(Student other_kid){
     /*
     TODO
-    If one and two refer to the same Student object, the method should print "Same Student".
+    If the instance and other_kid refer to the same Student object, the method should print "Same Student".
     Regardless of whether the instance and other_kid refer to the same Student object, the method should
     print "Same CS teacher" if the CSTeacher objects returned by getTeacher are equal as
     determined by the equals method.  If the Teacher objects returned by get_teacher are
