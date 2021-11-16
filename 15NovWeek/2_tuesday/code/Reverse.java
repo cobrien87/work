@@ -3,15 +3,15 @@ public class Reverse{
   public static String reverse(String str){
     // implement reverse method here
     String newString  = "";
-    for (int i = 0 ; i<str.length(); i++){
+    for (int i = str.length() -1 ; i>=0; i--){
       char character = str.charAt(i);
-      newString = character + newString;
+      newString += character;
     }
     return newString;
   }//end reverse
   public static void main(String[] args){
     Scanner input = new Scanner(System.in);
-    System.out.println("Enter a sentence to be reversed: ");
+    System.out.print("Enter a sentence to be reversed: ");
     String str = input.nextLine();
     String reverse = reverse(str);
     System.out.println(reverse);
