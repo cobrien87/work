@@ -18,7 +18,16 @@ public class Test{
   }
 
   public static void problemThree(){
-    String str = "The lazy dog jumped over the quick brown fox.";
+
+    int counter = 0;
+    int a = 4;
+    int b = 5;
+    for (int i = 0; i < a; i++){
+      for (int j = 0; j < b; j++){
+        counter++;
+      }
+    }
+    System.out.print(counter);
 
   }
 
@@ -37,7 +46,7 @@ public class Test{
 
 
   public static void problemFour(){
-    
+
   }
 
   public static void inputPassword(String password){
@@ -56,6 +65,6 @@ public class Test{
     }
   }
   public static void main(String[] args){
-    System.out.print(enCoder("decaf"));
+  problemThree();
   }
 }
