@@ -39,7 +39,7 @@ public class Test{
     for (int i = 0; i <incriptedString.length();i++ ){
       character = incriptedString.substring(i,i+1);
       num = alpha.indexOf(character);
-      output += num +1;
+      output += num;
     }
     return output;
   }
@@ -49,11 +49,11 @@ public class Test{
 
   }
 
-  public static void inputPassword(String password){
+  public static void inputPassword(String password, int numGuesses){
     int counter = 0;
 
     Scanner input = new Scanner(System.in);
-    while (counter < 5){
+    for (int i = 0; i < numGuesses; i++){
       System.out.print("Enter your password: ");
       String str = input.nextLine();
       if (str.equals(password)){
@@ -65,6 +65,6 @@ public class Test{
     }
   }
   public static void main(String[] args){
-  problemThree();
+  inputPassword("Java rulz", 4);
   }
 }
