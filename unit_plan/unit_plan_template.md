@@ -54,6 +54,28 @@ Total lenghth: 2 Weeks
 
 10. Assessment: MC quiz and Performance Task: Re-implement Mancala with ArrayLists
 
+
+## alternative
+1. Represent collections of related primitive or object reference data using one-dimensional (1D) array objects
+
+2. Traverse the elements in a 1-D array
+
+3. Practice building a fibonacci sequence array sequence
+
+4. Traverse the elements in a 1D array object using an enhanced for loop
+
+5. Build a class roster class using an array
+
+6. Identify some common algorithms that use arrays
+
+7. Practice using a common algorithms
+
+8. Compare and contrast Java Arrays w/ Python lists  
+
+9. Build your own SuperArray class that makes arrays behave like a Python list (Project)
+
+10. Quiz
+
 ## Assesments
 In class projects: Build Mancala AI with arraylists, build superArray classic
 Assessment: MC quiz and performance task: Re-implement Mancala with ArrayLists
