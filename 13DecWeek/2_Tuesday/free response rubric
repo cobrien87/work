@@ -1,0 +1,11 @@
+appropriately initializes scanner class 
+
+asks for user input in each round
+
+prints approriate message within each round
+
+uses loop to generate correct number of guesses
+
+uses .equals method for boolean comparison
+
+
