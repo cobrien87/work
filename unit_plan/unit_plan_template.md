@@ -64,9 +64,7 @@ Total lenghth: 2 Weeks
 
 4. Traverse the elements in a 1D array object using an enhanced for loop
 
-5. Build a class roster class using an array
-
-6. Identify some common algorithms that use arrays
+5. Identify some common algorithms that use arrays
 
 7. Practice using a common algorithms
 
