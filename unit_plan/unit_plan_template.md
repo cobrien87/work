@@ -14,7 +14,7 @@ The goal is to provide students with a hands on introduction to arrays and array
 
 ## Standards Referenced
 
-**CSTA 11-12th grade standards: 3B-AP-12: Compare and contrast fundamental data structrues and their uses.**
+**CSTA 11-12th grade standards: 3B-AP-12: Compare and contrast fundamental data structures and their uses.**
 
 In this unit we're discussing the use of arrays and ArrayLists within Java and between Java and Python.
 
