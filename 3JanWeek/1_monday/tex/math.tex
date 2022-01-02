@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath} 
+\usepackage{amsfonts} %for piecewise functions
+
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{listings} %for programming snippets
+\usepackage{color} %for keyword colors in programming snippets
+\usepackage{multicol} %for multiple columns
+%the following is for java listings
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tblr,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{document}
+\begin{equation}
+f(x) = \begin{cases}
+x  + 2 \quad  \text{if } x < 0, \\
+x \quad \text{if } x = 0, \\
+x -2 \quad \text{if } x > 0
+\end{cases}
+\end{equation}
+
+\begin{lstlisting}
+fun f(x):
+    ask:
+    | x  < 0  then:  x + 2 
+    | x == 0 then: x 
+    | x > 0 then: x - 2 
+    end:
+end
+\end{lstlisting}
+\end{document}
