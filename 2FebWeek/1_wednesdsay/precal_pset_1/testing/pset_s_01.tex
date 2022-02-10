@@ -13,6 +13,17 @@
 \usepackage{amsmath}
 \usepackage{multicol} %for multiple columns
 
+
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\}
+        }
+}
+
 \title{Pset\#1: Solving systems of equations by substitution }
 
 \author{Precalculus \\ Spring Semester 2022 \\ Herbert H. Lehman High School}

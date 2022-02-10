@@ -1,0 +1,125 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\}
+        }
+}
+
+\title{Pset\#1: Solving systems of equations with Gaussian Elimination }
+
+\author{Precalculus \\ Spring Semester 2022 \\ Herbert H. Lehman High School}
+\begin{document}
+\maketitle
+\noindent\textbf{Be sure to: } Complete all work in your notebook. Upload a photo to Google Classroom to submit.  Show all work!
+\vspace{5mm}
+
+
+
+
+
+\begin{questions}
+\question
+
+\textbf{Consider the following system of equations:}
+
+$
+\begin{tabular}{r c r c r c r }
+x & + & y & + & z & = & 48 \\
+
+--x & + & 2y & + &2z & = & -24  \\
+
+2x & -- & 6y & + & 4z & = & 12 \\
+\end{tabular}
+$
+
+\textbf{Steps (a)--(c) below illustrate the conversion of this system into row--echelon form.  For each step, explain how it was derived from the previous step.  Be as explicit as possible!}
+\vspace{0.3cm}
+\begin{parts}
+
+\part
+
+\hspace{1cm}
+$
+\begin{tabular}{r c r c r c r }
+x & + & y & + & z & = & 48 \\
+
+ &  & 3y & + &3z & = & 24  \\
+
+2x & -- & 6y & + & 4z & = & 12 \\
+\end{tabular}
+$
+\vspace{0.5cm}
+\part
+\hspace{1cm}
+$
+\begin{tabular}{r c r c r c r }
+x & + & y & + & z & = & 48 \\
+
+ &  & 3y & + &3z & = & 24  \\
+
+&  & 8y & -- & 2z & = & 84 \\
+\end{tabular}
+$
+\vspace{0.5cm}
+\part
+\hspace{1cm}
+$
+\begin{tabular}{r c r c r c r }
+x & + & y & + & z & = & 48 \\
+
+ &  & 3y & + &3z & = & 24  \\
+
+&  &  &  & 30z & = & -60 \\
+\end{tabular}
+$
+\vspace{0.5cm}
+
+
+\end{parts}
+\textbf{
+Finally, use back--substitution to solve for $x$, $y$, and $z$. 
+} 
+
+\question
+\textbf{Use Gaussian eliminitation to convert the system below to row-echelon form, the use back substitution to solve:}
+$
+\begin{tabular}{r c r c r c r }
+x & + & y & --& z & = & --2 \\
+
+2x & -- & y & + & z & = & 5  \\
+
+-x & + & 2y & + & 2z & = & 1 \\
+\end{tabular}
+$
+
+\question
+$
+\begin{tabular}{r c r c r c r }
+x & -- & 3y & +& z & = & 1 \\
+
+2x & -- & y & -- & 2z & = & 2  \\
+
+x & + & 2y & -- & 3z & = & -1 \\
+\end{tabular}
+$
+\end{questions}
+\end{document}
