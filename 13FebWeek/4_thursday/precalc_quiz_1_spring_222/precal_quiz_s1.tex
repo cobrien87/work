@@ -1,0 +1,138 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\}
+        }
+}
+
+\title{Precalculus Quiz\#1: Spring 2022  }
+
+\author{  Name:   }
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{questions}
+\question 
+
+\begin{multicols}{2}
+An \textbf{inconsistent system} is  which... 
+
+\columnbreak
+\begin{choices}
+\choice has an infinite number of solutions.
+\choice has more variables than equations
+\choice has no solutions
+\choice contains at least one polynomial term.
+\end{choices}
+
+\end{multicols}
+
+\question 
+\label{two}
+\begin{multicols}{2}
+Which of the following does \textbf{not} represent a solution to the system below
+
+$
+\systeme{
+x^2 -2x + y = 8,
+x - y = -2
+}
+$
+
+\begin{choices}
+\choice  $x = -2, y = 0$
+\choice $x = 3, y = 5$
+\choice $x = 3, x = 2 $
+\end{choices}
+\end{multicols}
+
+\question Explain how you could use \textbf{substitution} to find the answer for question (\ref{two}):
+
+\makeemptybox{2in}
+\question
+\begin{multicols}{2}
+A \textbf{coefficient matrix} will always contain...
+
+\columnbreak
+
+\begin{choices}
+\choice one more column than variables in a linear system.
+\choice the same number of columns as variables in a linear system.
+\choice one fewer column than variables in a linear system
+\choice  exactly three columns.
+\end{choices}
+\end{multicols}
+
+\question
+
+
+\begin{multicols}{2}
+ Which of the following represents the solution set for the  nonsquare system below?
+
+$
+\systeme{
+2x - 3y + z = -2,
+-4x + 9y + z = 7
+}
+
+\columnbreak
+\begin{choices}
+\choice $ x = -\frac{5}{6}a - \frac{1}{6} , y = \frac{7-a}{9}, z = a$
+\choice $ x = \frac{1}{2} - 2a, y = 1 - a, z = a $
+\choice $ x = \frac{1}{2} + 2a, y = 1 +a, z = a $
+\choice This is an inconsistent system.
+\end{choices}
+\vspace{0.5cm}
+
+\end{multicols}
+
+\newpage
+
+\question
+\begin{multicols}{2}
+Use \textbf{Gaussian elimination} to solve this system of equations.  You can convert to augmented matrix form if you want to.  Show all work.
+
+
+$
+\columnbreak
+\systeme{
+x + y - 5z = 3,
+x    - 2z = 1,
+2x - y - z = 0
+}
+$
+\end{multicols}
+
+\textbf{Extra credit: } Use Gauss-Jordan elimination to find the solution set for this system.
+
+\textbf{Answer here (if you need more space, feel free to ask for scrap paper): }
+\makeemptybox{\stretch{1}}
+
+\end{questions}
+
+\thispagestyle{empty}
+
+
+\end{document}
