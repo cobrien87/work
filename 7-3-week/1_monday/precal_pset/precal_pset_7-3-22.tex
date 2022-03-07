@@ -1,0 +1,185 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\} 
+        }
+}
+
+\title{Precalculus Pset \#3:  Multiplying matrices  }
+
+\author{  Name: \setlength\fillinlinelength{2in} \fillin \\
+Spring 2022 }
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{questions}
+\question
+For each pair of matrices $A$ and $B$ in (\ref{a}-\ref{d}) below:
+\begin{enumerate}[i.]
+\item Find the dimensions of matrices $A$ and $B$. Identify if he two matrices can be multiplied
+\item If possible, find the  product of $A\times B$
+\end{enumerate}
+\vspace{0.5cm}
+\begin{parts}
+\part 
+\label{a}
+
+
+$
+A = 
+\begin{bmatrix}
+1 & 2 \\
+2 & 1
+\end{bmatrix},
+B =
+\begin{bmatrix}
+-3 & -2 \\
+4 & 2
+\end{bmatrix}
+$
+\vspace{\stretch{1}}
+\part
+\label{b}
+$
+A = 
+\begin{bmatrix}
+8 & -1 \\
+2 & 3 \\
+-4 & 5
+\end{bmatrix},
+B = 
+\begin{bmatrix}
+1 & 2 \\
+2 & 1
+\end{bmatrix}
+$
+\vspace{\stretch{1}}
+
+
+
+\part
+\label{c}
+
+$
+A = 
+\begin{bmatrix}
+1 & 2 \\
+2 & 1
+\end{bmatrix},
+B = 
+\begin{bmatrix}
+8 & -1 \\
+2 & 3 \\
+-4 & 5
+\end{bmatrix}
+$
+\vspace{\stretch{1}}
+
+\part
+\label{d}
+
+$
+A = 
+\begin{bmatrix}[
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix},
+B = 
+\begin{bmatrix}
+-3 & 2 & 12 \\
+8 & 0 & -7 \\
+-6 & 2 & -10
+\end{bmatrix}
+$
+\vspace{\stretch{1}}
+\end{parts}
+
+
+\newpage
+
+\question
+\begin{parts}
+\part\label{2a} Find the product of multiplying the two matrices below:
+
+$
+\begin{bmatrix}
+1 & 0 & -3 \\
+3 & 1 & -2 \\
+2 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix}
+$
+\vspace{\stretch{1}}
+\part
+Explain why the matrix equation on the left is equivalent to the system of equations on the right. Be sure to refer to (2\ref{2a}) in your answer and answer in at least one complete sentence:\\
+
+\begin{multicols}{2}
+\textbf{Matrix equation: }
+
+$
+\begin{bmatrix}
+1 & 0 & -3 \\
+3 & 1 & -2 \\
+2 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = 
+\begin{bmatrix}
+-2 \\
+5 \\
+4
+\end{bmatrix}
+$ 
+\columnbreak
+
+
+\textbf{System of linear equations:}
+
+\systeme{
+x - 3z = -2,
+3x + y -2z = 5,
+2x + 2y + z = 4
+}
+\end{multicols}
+\fillwithlines{\stretch{1}}
+\end{parts}
+\newpage
+
+\end{questions}
+
+\thispagestyle{empty}
+
+
+\end{document}
