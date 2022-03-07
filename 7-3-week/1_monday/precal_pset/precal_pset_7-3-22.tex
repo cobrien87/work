@@ -17,7 +17,7 @@
 
 %fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
 \usepackage{pgffor, ifthen}
-\newcommand{\notes}[3][\empty]{%
+\newcommand{\notes}[3][\empty]{%q
    vspace{10pt}\\
     \foreach \n in {1,...,#2}{%
         \ifthenelse{\equal{#1}{\empty}}
