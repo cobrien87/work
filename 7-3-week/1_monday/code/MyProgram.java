@@ -36,5 +36,5 @@ public class MyProgram{
     //implements selection sort using findMinIndex() nad swapIJ()
     ;
   }//end selection sort
-  
+
 }
