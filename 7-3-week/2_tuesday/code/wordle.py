@@ -1,29 +1,50 @@
+from wordlist import *
 def display(list):
-    str = "[ "
+    my_str = "[ "
     for item in list:
-        str+=item+" "
-    return str+"]"
-target = "sword"
+        my_str+=item+" "
+    return my_str+"]"
+target =  "snows"
+
+
+
+
+
+#game
 numGuesses = 5
+notInWord = [];
 for i in range(numGuesses):
-    #print("You have " + str(numGuesses - i) + " guesses remaining.")
-    guess= input("Enter a 5 letter word: ")
-    while len(guess) != 5:
-        guess = input("Enter a 5 letter word! try again: ")
+    print("You have " + str(numGuesses - i) + " guesses remaining.")
+    guess= input("Enter a 5 letter word (all lower case): ")
+    while True:
+        if len(guess) != 5:
+            guess = input("Enter a 5 letter word! try again: ")
+        if not(wordInList(guess)):
+            guess = input("That's not a word! Try again: ")
     if guess== target:
-        print("Correct! ")
+        print("Correct! You win. ")
         break
-    str = ""
+    my_str = ""
     wrongPos = [];
+
     for i in range(len(guess)):
         if guess[i] == target[i]:
-            str+=guess[i]+" "
-        print("str: " + str)
-        print(guess[i] + " in string? " + str(guess[i] in str))
-        if guess[i] in target and guess[i] not in str:
+            my_str+=guess[i]+" "
+
+
+        elif guess[i] in target and guess[i] not in my_str:
             wrongPos.append(guess[i])
-            str+="_ "
+            my_str+="_ "
         else:
-            str+="_ "
-    print("word: " + str)
+            notInWord.append(guess[i])
+            my_str+="_ "
+        #print("is " + guess[i] +" in my_string?:" )
+
+    print("word: " + my_str)
+    print("letters guessed, but not in word: " + display(notInWord))
     print("letters in word, but in wrong position: " + display(wrongPos))
+    boo = input("Do you want to quit? (y/n) ")
+    if boo == 'y':
+        break
+
+print("The correct word was: " + target)
