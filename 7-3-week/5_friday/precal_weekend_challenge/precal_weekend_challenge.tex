@@ -1,0 +1,53 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%q
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\} 
+        }
+}
+
+\title{Weekend challenge (March 11-14, 2022)  }
+
+\author{  }
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\textbf{Your weekend challenge: } Use Gauss-Jordan Elimination to find the inverse of $A$:
+
+$
+A=
+\begin{bmatrix}
+1 & 4 \\
+-1 & -3
+\end{bmatrix}
+$
+
+\textbf{Remember: } First set up the problem with the augmented matrix [$A | I$].
+
+\thispagestyle{empty}
+
+
+\end{document}
