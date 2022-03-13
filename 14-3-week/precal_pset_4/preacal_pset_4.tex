@@ -1,0 +1,86 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%q
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\} 
+        }
+}
+
+\title{Pset \#4: Using Matrix inverses to solve systems of equations  }
+
+\author{  }
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{questions}
+\question
+Be sure to...  (i) convert to $AX=B$; (ii) use \textbf{Gauss-Jordan} elimination to find $A^{-1}$￼; (iii) solve for the variables.
+\vspace{0.5cm}
+\begin{parts}
+\part
+$
+\systeme{
+x + 2y = -2,
+3x+4y = 0
+}
+$
+\vspace{0.5cm}
+
+
+
+\part
+$
+\systeme{
+2x - 17y + 11z=1,
+-x + 11y -7z = 0,
+3y-2z=0
+}
+$
+\end{parts}
+
+\question
+
+
+You decide to invest in AAA-rated bonds\footnote{Companies and governments often issue bonds to raise money.  If you buy a  \textbf{bond}, you are basically lending money to the bond issuer, and the issuer is promising to pay you back with interest in the future.  Bonds are rated by how good a reputation the company has. Companies that are very large and profitable (e.g. Apple, Coca-Cola) are likely to pay you back, so they are typically rated AAA. Companies that are more likely to go out of business are rated lower and must charge higher interest rates.
+
+If you've ever heard the phrase \textbf{junk bonds}, it refers to poorly rated bonds from high-risk companies.}, A-rated bonds, and B-rated bonds.  The average yields are: 6.5\% for AAA-rated, 7\% for A-rated, and 9\% for B-rated bonds. Your financial advisor tells you to buy twice as many B-rated bonds as A-rated bonds.
+
+\begin{parts}
+\part 
+\label{2a}
+Represent this problem using a system of linear equations.  Write a sentence explaining how the system is related to the problem.
+
+\part Represent your system from (2\ref{2a}) as a \textbf{matrix equation}.
+
+\part Use Gauss-Jordan elimination and matrix inverses to determine how much you should purchase of each class of bonds.    Write a sentence explaining why your answer makes sense.
+\end{parts}
+\end{questions}
+
+
+\thispagestyle{empty}
+
+
+\end{document}
