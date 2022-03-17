@@ -1,0 +1,64 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%q
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\} 
+        }
+}
+
+\title{Pset \#4: Using Matrix inverses to solve systems of equations  }
+
+\author{  }
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+
+$
+A =
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+$
+
+$
+A^{-1} = \frac{1}{ad -bc}
+\begin{bmatrix}
+d & -b \\
+-c &  a
+\end{bmatrix}
+$
+\vspace{1cm}
+
+$
+\systeme{
+7x + 3y = 2,
+9x + 4y = 0
+}
+$
+
+\end{document}
