@@ -1,0 +1,98 @@
+\documentclass{exam}
+
+\pagenumbering{gobble}
+\usepackage{titling}
+\setlength{\droptitle}{-8ex}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\usepackage{enumerate} %for alphabetized lists
+\usepackage{amsmath}
+\usepackage{multicol} %for multiple columns
+\usepackage{systeme} %systems of equations
+\renewcommand{\questionshook}{\setlength{\itemsep}{15pt}} %controls space betweenites
+
+%fromhttps://texblog.org/2012/06/25/adding--lines--for--taking--handwritten--notes--in--latex/
+\usepackage{pgffor, ifthen}
+\newcommand{\notes}[3][\empty]{%q
+   vspace{10pt}\\
+    \foreach \n in {1,...,#2}{%
+        \ifthenelse{\equal{#1}{\empty}}
+            {\rule{#3}{0.5pt}\\}
+            {\rule{#3}{0.5pt}\vspace{#1}\\} 
+        }
+}
+
+\title{Problem set: Using the adjugate and determinant of a matrix to solve real world problems  }
+
+\author{ \textbf{Name: }  \enspace\hrulefill \\ Precalculus \\ Herbert H. Lehman High School } 
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent\textbf{Be sure to...} Do all work in your notebook.  If you don't complete work in class, finish at home. Submit on Google Classroom.
+\begin{questions}
+\question 
+For the matrices below, \textbf{be sure to} (i) find the determinant and adjugate for each, then (ii) use these to find the inverse of the matrix (if possible). If an inverse can't be found, explain why not:
+
+\begin{parts}
+\part
+$
+A = \begin{bmatrix}
+6  & -7 \\
+-3 &  4
+\end{bmatrix}
+$
+\part
+
+$
+A = \begin{bmatrix}
+6  & 12 \\
+2 &  4
+\end{bmatrix}
+$
+
+\end{parts}
+
+\question
+For the system of linear equations below, \textbf{be sure to}:
+\begin{multicols}{2}
+\begin{enumerate}[i.]
+\item Convert into a matrix equation $AX=B$
+\item Find the determinant and adjugate for A 
+\item Find the inverse of A
+\item Use the inverse of A to solve the system of equations
+\end{enumerate}
+\columnbreak
+
+$
+\systeme{
+5x + 4y =  3,
+2x + 2y = 4
+}
+$
+\end{multicols}
+
+\question
+Dr. Galvez and Dr. Guillermo are testing a new  experimental medicine (Precalodine) at Montefiore Hosptial.  The medicine is being given to a total of 100 patients.  Patients take the medicine in a 1 liter solution, meaning that some percent of the solution is the medicine, and the rest is water.  If patients are being given 2\% or 4\% solutions, and 2.5 liters of the medicine are on hand, how many patients will be given the 2\% solution and how many should be given the 4\%, with all the medicine used up?
+
+\textbf{Be sure to:}
+\begin{parts}
+\part Create a system of linear equations corresponding to this problem
+\part Rewrite your system of equations as $AX=B$
+\part Use your knowledge of matrix adjugate and determinant to figure out how many patients can be given the 4\% solution.
+
+\end{parts}
+
+\question \textbf{Challenge!!!!} Now Dr. Galvez and Dr. Guillermo want to add a third 6\% solution.  If they still have 100 patients and now have 3.5 liters of Precalodine on hand, how many patients should be given each dose?
+
+  \textbf{Hint: }  You'll be dealing with a $3\times 3$ matrix. Use the adjugate and determinant \textbf{calculator} on Google Classroom!
+
+\end{questions}
+
+\end{document}
