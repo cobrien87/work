@@ -61,7 +61,7 @@ Can be represented by the 2D list:
               ]
 
 ## Helper Functions
-This functions are provided for you.  You should use them!
+These functions are provided for you.  You should use them!
 ### get_valid_index()
 **parameter**: prompt (a message to the user).  a string
 
