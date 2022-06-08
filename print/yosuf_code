@@ -1,0 +1,272 @@
+"""
+This program simulates the game of tic tac toe.
+"""
+
+# get_valid_index
+# -----
+# Get row or column from user
+def get_valid_index(prompt):
+    while True:
+        try:
+            index = int(input(prompt))
+            if index >= 0 and index <= 2:
+                return index
+            print("Must be 0 - 2 inclusive!")
+        except ValueError:
+            print("Must be an integer!")
+
+# game_is_over
+# -----
+# Return True if the game is over and False
+# otherwise. Print a message indicating who
+# won or whether there was a tie.
+def game_is_over(board):
+    for i in range(3):
+        # Check horizontal
+        if board[i][0] == board[i][1] == board[i][2] \
+            and board[i][0] != " ":
+            print_board(board)
+            print(board[i][0] + " wins!")
+            return True
+        
+        # Check vertical
+        if board[0][i] == board[1][i] == board[2][i] \
+            and board[0][i] != " ":
+            print_board(board)
+            print(board[0][i] + " wins!")
+            return True
+        
+    # Check diagonals
+    if board[0][0] == board[1][1] == board[2][2] \
+        and board[0][0] != " ":
+        print_board(board)
+        print(board[0][0] + " wins!")
+        return True
+    
+    if board[2][0] == board[1][1] == board[0][2] \
+        and board[2][0] != " ":
+        print_board(board)
+        print(board[2][0] + " wins!")
+        return True
+    
+    # Check tie
+    if " " not in board[0] and " " not in board[1] \
+        and " " not in board[2]:
+        print_board(board)
+        print("Tie game!")
+        return True
+
+def block(board):
+    for i in range(3):
+    #check x horizontal 2 in row 
+        if board[i][0] == board[i][1] == "x" \
+            and board[i][0] != " " and board[i][2] != "o":
+            print_board(board)
+            board[i][2] = "o"
+            return True
+            
+        if board[i][1] == board[i][2] == "x" \
+            and board[i][0] != " " and board[i][0] != "o":
+            print_board(board)
+            board[i][0] = "o"
+            return True
+            
+    #check x horizontal in between    
+        if board[i][0] == board[i][2] == "x"  \
+            and board[i][0] != " " and board[i][1] != "o":
+            print_board(board)
+            board[i][1] = "o"
+            return True
+            
+    #check x vertical 2 in a row
+        if board[0][i] == board[1][i] == "x" \
+            and board[0][i] != " " and board[2][i] != "o":
+            print_board(board)
+            board[2][i] = "o"
+            return True
+        
+        if board[1][i] == board[2][i] == "x" \
+            and board[0][i] != " " and board[0][i] != "o":
+            print_board(board)
+            board[0][i] = "o"
+            return True
+            
+    #check x vertical in between 
+        if board[0][i] == board[2][i] == "x" \
+            and board[0][i] != " " and board[1][i] != "o":
+            print_board(board)
+            board[1][i] = "o"
+            return True
+            
+    #check diagonal vertical top left in a row
+    if board[0][0] == board[1][1] == "x" and board[0][0] != " " and board[2][2] != "o":
+        print_board(board)
+        board[2][2] = "o"
+        return True
+        
+    if board[1][1] == board[2][2] == "x" and board[1][1] != " " and board[0][0] != "o":
+        print_board(board)
+        board[0][0] = "o"
+        return True
+        
+    #check diagonal top left in between
+    if board[0][0] == board[2][2] == "x" \
+        and board[0][0] != " " and board[1][1] != "o":
+        print_board(board)
+        board[1][1] = "o"
+        return True
+        
+    #check diagonal top right in a row
+    if board[2][0] == board[1][1] == "X" \
+        and board[2][0] != " " and board[0][2] != "o":
+        print_board(board)
+        board[0][2] = "o"
+        return True
+        
+    if board[1][1] == board[0][2] == "x" \
+        and board[1][1] != " " and board[2][0] != "o":
+        print_board(board)
+        board[2][0] = "o"
+        return True
+        
+    #check diagonal top right in between
+    if board[2][0] == board[0][2] == "x" \
+        and board[2][0] != " " and board[1][1] != "o":
+        print_board(board)
+        board[1][1] = "o"
+        return True
+    
+def win(board):
+    for i in range(3):
+    #check o horizontal 2 in row 
+        if board[i][0] == board[i][1] == "o" \
+            and board[i][0] != " " and board[i][2] != "x":
+            print_board(board)
+            board[i][2] = "o"
+            return True
+            
+        if board[i][1] == board[i][2] == "o" \
+            and board[i][0] != " " and board[i][0] != "x" :
+            print_board(board)
+            board[i][0] = "o"
+            return True
+            
+    #check o horizontal in between    
+        if board[i][0] == board[i][2] == "o" \
+            and board[i][0] != " " and board[i][1] != "x":
+            print_board(board)
+            board[i][1] = "o"
+            return True
+            
+    #check o vertical 2 in a row
+        if board[0][i] == board[1][i] == "o" \
+            and board[0][i] != " " and board[2][i] != "x":
+            print_board(board)
+            board[2][i] = "o"
+            return True
+        
+        if board[1][i] == board[2][i] == "o" \
+            and board[0][i] != " " and board[0][i] != "x":
+            print_board(board)
+            board[0][i] = "o"
+            return True
+            
+    #check o vertical in between 
+        if board[0][i] == board[2][i] == "o" \
+            and board[0][i] != " " and board[1][i] != "x":
+            print_board(board)
+            board[1][i] = "o"
+            return True
+            
+    #check diagonal vertical top left in a row
+    if board[0][0] == board[1][1] == "o" and board[0][0] != " " and board[2][2] != "x":
+        print_board(board)
+        board[2][2] = "o"
+        return True
+        
+    if board[1][1] == board[2][2] == "o" and board[1][1] != " " and board[0][0] != "x":
+        print_board(board)
+        board[0][0] = "o"
+        return True
+        
+    #check diagonal top left in between
+    if board[0][0] == board[2][2] == "o" \
+        and board[0][0] != " " and board[1][1] != "x":
+        print_board(board)
+        board[1][1] = "o"
+        return True
+        
+    #check diagonal top right in a row
+    if board[2][0] == board[1][1] == "o" \
+        and board[2][0] != " " and board[0][2] != "x":
+        print_board(board)
+        board[0][2] = "o"
+        return True
+        
+    if board[1][1] == board[0][2] == "o" \
+        and board[1][1] != " " and board[2][0] != "x":
+        print_board(board)
+        board[2][0] = "o"
+        return True
+        
+    #check diagonal top right in between
+    if board[2][0] == board[0][2] == "o" \
+        and board[2][0] != " " and board[1][1] != "x":
+        print_board(board)
+        board[1][1] = "o"
+        return True 
+
+def random(board):
+    for i in range(3):
+        for j in range(3):
+            if board[j][i] == " ":
+                print_board(board)
+                board[j][i] = "o"
+                break
+            
+        break
+                
+                
+        
+    # Not over yet!
+    return False
+    
+# print_board
+# -----
+# Print the board.
+def print_board(board):
+    print(board[0])
+    print(board[1])
+    print(board[2])
+    # TODO: Replace the line below with your code...
+    print("")
+
+# Set up board
+board = [[" ", " ", " "], [" ", " ", " ",], [" ", " "," "]]
+# TODO: Set up the board as a 3x3 grid of spaces here...
+
+# x goes first
+turn = "x"
+#count = 1
+# Play tic tac toe
+while not game_is_over(board):
+    print_board(board)
+    print("It's " + turn + "'s turn.")
+    row = get_valid_index("Row: ")
+    col = get_valid_index("Col: ")
+    board[row][col] = turn
+    #count = count +1
+    
+    if win(board):
+        win(board)
+    elif block(board):
+        block(board)
+    elif random(board):
+        random(board)
+    continue
+    #if count % 2 == 0 :
+    #    turn = "o"
+    #elif count % 2 != 0:
+    #    turn = "x"
+    
+    # TODO: Your code here...
