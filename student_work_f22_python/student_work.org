@@ -1,4 +1,6 @@
 #+TITLE: MP1 art project hall of fame!
+#+AUTHOR: Intro to Python, Lehman HS
+#+Date: Fall 2022
 
 Below you'll find excellent work from Python students. Click the link and run the code to see what they did!
 
