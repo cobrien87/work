@@ -1,2 +1,7 @@
+#+TITLE: MP1 art project hall of fame!
+
+Below you'll find excellent work from Python students. Click the link and run the code to see what they did!
+
+
 * Jeremiah Noel
 [[https://codehs.com/share/id/turtle-art-coding-BDmfUe/run]]
