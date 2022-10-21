@@ -5,5 +5,9 @@
 Below you'll find excellent work from Python students. Click the link and run the code to see what they did!
 
 
-* Jeremiah Noel
+* Jeremiah N.
 [[https://codehs.com/share/id/turtle-art-coding-BDmfUe/run]]
+
+
+* Walston L.
+[[https://codehs.com/sandbox/id/ahhhhhhhhhhhhhhhhhhhhhhhh-buSGTx/run]]
